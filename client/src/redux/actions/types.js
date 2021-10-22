@@ -1,0 +1,15 @@
+export const GET_BUDGETS = "GET_BUDGETS";
+export const ADD_BUDGET = "ADD_BUDGET";
+export const DELETE_BUDGET = "DELETE_BUDGET";
+export const UPDATE_BUDGET = "UPDATE_BUDGET";
+export const BUDGETS_LOADING = "BUDGETS_LOADING";
+export const USER_LOADING = "USER_LOADING";
+export const USER_LOADED = "USER_LOADED";
+export const AUTH_ERROR = "AUTH_ERROR";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAIL = "LOGIN_FAIL";
+export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
+export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
+export const REGISTER_FAIL = "REGISTER_FAIL";
+export const GET_ERRORS = "GET_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";

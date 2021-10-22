@@ -1,11 +1,12 @@
-import './App.css';
+import "./App.css";
+import AppRouter from "./pages/AppRouter";
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Henry Videogames</h1>
-    </div>
-  );
+	return (
+		<div>
+			<AppRouter />
+		</div>
+	);
 }
 
 export default App;
