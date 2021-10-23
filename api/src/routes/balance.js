@@ -85,6 +85,8 @@ router.delete("/:id", authorization, async (req, res, next) => {
 //PUT
 router.put("/", authorization, async (req, res, next) => {
 	const { concept, amount, date, category, budgetId } = req.body;
+	let page = 1;
+	let limit = 10;
 	try {
 		await Balance.update(
 			{
@@ -99,7 +101,22 @@ router.put("/", authorization, async (req, res, next) => {
 				},
 			}
 		);
-		res.send({ message: "Budget was updated success." });
+		result = await Balance.findAndCountAll({
+			distinct: true,
+			offset: (parseInt(page) - 1) * limit,
+			limit,
+			where: {
+				authId: req.user,
+			},
+			attributes: ["id", "concept", "amount", "date", "type"],
+			order: [["id", "desc"]],
+		});
+		res.send({
+			count: result.count,
+			pages: Math.ceil(result.count / limit),
+			page,
+			results: result.rows,
+		});
 	} catch (error) {
 		next(error);
 	}
